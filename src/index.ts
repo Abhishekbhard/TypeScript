@@ -1,16 +1,11 @@
-abstract class Shape {
-  constructor(public color: string) {}
-  abstract render(): void;
-}
+// abstract class Calendar {
+//   constructor(public name: string) {}
+//   abstract addEvent(): void;
+//   abstract removeEvent(): void;
+// }
 
-class Circle extends Shape {
-  constructor(color: string, public radius: number) {
-    super(color);
-  }
-  override render(): void {
-    console.log("Rendering a circle");
-  }
+interface Calendar {
+  name: string;
+  addEvent(): void;
+  removeEvent(): void;
 }
-
-let circle = new Circle("Red", 4);
-console.log(circle.render());
