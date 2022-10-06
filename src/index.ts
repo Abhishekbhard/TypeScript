@@ -8,7 +8,7 @@ class Person {
     console.log("Waliking..");
   }
 }
-class Students extends Person {
+class Student extends Person {
   constructor(public studentId: number, firstName: string, lastName: string) {
     super(firstName, lastName);
   }
@@ -16,6 +16,13 @@ class Students extends Person {
     console.log("taking test");
   }
 }
+class Teacher extends Person {
+  override get fullName(): string {
+    return "Proffesor" + " " + super.fullName;
+  }
+}
 
-let student = new Students(1, "Abhiansh", "abhi@gmail.com");
+let student = new Student(1, "Abhiansh", "abhi@gmail.com");
 student.takeTest();
+let teacher = new Teacher("Abhishek", "Bhardwaj");
+console.log(teacher.fullName);

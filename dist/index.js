@@ -11,7 +11,7 @@ class Person {
         console.log("Waliking..");
     }
 }
-class Students extends Person {
+class Student extends Person {
     constructor(studentId, firstName, lastName) {
         super(firstName, lastName);
         this.studentId = studentId;
@@ -20,6 +20,13 @@ class Students extends Person {
         console.log("taking test");
     }
 }
-let student = new Students(1, "Abhiansh", "abhi@gmail.com");
+class Teacher extends Person {
+    get fullName() {
+        return "Proffesor" + " " + super.fullName;
+    }
+}
+let student = new Student(1, "Abhiansh", "abhi@gmail.com");
 student.takeTest();
+let teacher = new Teacher("Abhishek", "Bhardwaj");
+console.log(teacher.fullName);
 //# sourceMappingURL=index.js.map
