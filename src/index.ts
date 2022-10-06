@@ -1,7 +1,17 @@
-// By using index signature we can add dynamic property to an object in typescript;
-class SeatAssignment {
-  [seatNumber: string]: string;
+// A static property is a property that belongs to a class not an object
+class Ride {
+  static activeRide: number = 0;
+  static start() {
+    this.activeRide++;
+  }
+  static stop() {
+    this.activeRide--;
+  }
 }
-let seat = new SeatAssignment();
-seat.A1 = "Abhishek";
-seat.A2 = "Shweta";
+
+let ride1 = new Ride();
+Ride.start();
+
+let ride2 = new Ride();
+Ride.start();
+console.log(Ride.activeRide);
