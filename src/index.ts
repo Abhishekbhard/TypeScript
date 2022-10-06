@@ -11,7 +11,7 @@ class Account {
       this._balance = amount;
     }
   }
-  getBalance(): number {
+  get balance(): number {
     return this._balance;
   }
 }
@@ -20,3 +20,4 @@ let account = new Account(1, "Abhishek", 0);
 account.deposite(100);
 console.log(typeof account);
 console.log(account instanceof Account);
+console.log(account.balance);
