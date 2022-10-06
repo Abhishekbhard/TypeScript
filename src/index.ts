@@ -1,17 +1,21 @@
-// A static property is a property that belongs to a class not an object
-class Ride {
-  static activeRide: number = 0;
-  static start() {
-    this.activeRide++;
+class Person {
+  constructor(public firstName: string, public lastName: string) {}
+
+  get fullName(): string {
+    return this.firstName + " " + this.lastName;
   }
-  static stop() {
-    this.activeRide--;
+  walk() {
+    console.log("Waliking..");
+  }
+}
+class Students extends Person {
+  constructor(public studentId: number, firstName: string, lastName: string) {
+    super(firstName, lastName);
+  }
+  takeTest() {
+    console.log("taking test");
   }
 }
 
-let ride1 = new Ride();
-Ride.start();
-
-let ride2 = new Ride();
-Ride.start();
-console.log(Ride.activeRide);
+let student = new Students(1, "Abhiansh", "abhi@gmail.com");
+student.takeTest();
