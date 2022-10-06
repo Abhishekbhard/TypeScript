@@ -18,4 +18,5 @@ class Account {
 
 let account = new Account(1, "Abhishek", 0);
 account.deposite(100);
-console.log(account.balance);
+console.log(typeof account);
+console.log(account instanceof Account);
