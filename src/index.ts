@@ -1,18 +1,21 @@
 class Account {
   id: number;
   owner: string;
-  balance: number;
-  constructor(id: number, owner: string, balance: number) {
+  private _balance: number;
+  constructor(id: number, owner: string, _balance: number) {
     this.id = id;
     this.owner = owner;
-    this.balance = balance;
+    this._balance = _balance;
   }
   deposite(amount: number) {
     if (amount <= 0) {
       throw new Error("Invalid amount");
     } else {
-      this.balance = amount;
+      this._balance = amount;
     }
+  }
+  getBalance(): number {
+    return this._balance;
   }
 }
 
