@@ -1,18 +1,10 @@
 "use strict";
-class Shape {
-    constructor(color) {
-        this.color = color;
+class KeyValyePair {
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
     }
 }
-class Circle extends Shape {
-    constructor(color, radius) {
-        super(color);
-        this.radius = radius;
-    }
-    render() {
-        console.log("Rendering a circle");
-    }
-}
-let circle = new Circle("Red", 4);
-console.log(circle.render());
+let keyvalue = new KeyValyePair(1, "a");
+console.log(keyvalue.value);
 //# sourceMappingURL=index.js.map
